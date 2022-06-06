@@ -6,7 +6,7 @@ import requests
 from telebot.types import InlineKeyboardButton
 
 # Fillout Here The BotToken it gets from botfather further queries @riz4d 0n telegram
-bot = telebot.TeleBot('BOT_TOKEN')
+bot = telebot.AKJAS('BOT_TOKEN')
 
 while True:
     try:
@@ -21,14 +21,20 @@ while True:
         def start_message(message):
             bot.send_message(message.chat.id,
 '''
-Hey.,
-Welcome to MysteryMail Bot
-Usage:
-➪ To Generate emails by clicking on the button "Generate email"
-➪ To refresh your inbox click on the button "Refresh inbox"
-➪ After a new letter arrives, you will see a button with a subject line, click on this button to read the message.
-                              
-Dev : @riz4d
+Hello 👋
+I am Akira Temp Email Generator which help users to generate a temporary email address.
+
+**Usage of Temporary Mail**
+• It can help you to login to a source by hiding your real identity to be saved from mischievous things.
+• It can make you to do experimental works in internet by hiding original identity.
+
+Want to know everything about temp-mail system, then /about to know more...!!!
+
+This bot is developed by [Akhil](https://github.com/AKH1LS) for educational purposes that how an API works.
+If you are facing issues in generating, report in our project [support group](https://telegram.dog/Akira_Support).
+
+Maintained under [Project Akira](https://telegram.dog/Akira_News).
+
 ''',
                              reply_markup=keyboard)
 
@@ -38,8 +44,8 @@ Dev : @riz4d
             if message.text.lower() == 'generate email':
                 email = requests.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1").json()[0]
                 ekeyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
-                ekeyboard.add(InlineKeyboardButton(text='Generate email'))
-                ekeyboard.add(InlineKeyboardButton(text='Refresh inbox\n[' + str(email) + "]"))
+                ekeyboard.add(InlineKeyboardButton(text='Generate Email'))
+                ekeyboard.add(InlineKeyboardButton(text='Refresh Inbox\n[' + str(email) + "]"))
                 ekeyboard.add(InlineKeyboardButton(text='About'))
                 bot.send_message(message.chat.id, "Your Temporary E-mail:")
                 bot.send_message(message.chat.id, str(email), reply_markup=ekeyboard)
@@ -48,17 +54,29 @@ Dev : @riz4d
             elif message.text.lower() == 'about':
                 bot.send_message(message.chat.id,
 '''
-What is Mystery Mail?
+**Introducing Akira Temp Mail**
 
-- it is a free email service that allows to receive email at a temporary address that self-destructed after a certain time elapses. It is also known by names like tempmail, 10minutemail, 10minmail, throwaway email, fake-mail , fake email generator, burner mail or trash-mail
+Akira Temp mail is a temporary email address generator that can help you to do experimental works by hiding original identity.
 
-How Mystery Mail Become Safer You?
+**Is it legal or illegal ?**
 
-- Using the temporary mail allows you to completely protect your real mailbox against the loss of personal information. Your temporary e-mail address is completely anonymous. Your details: information about your person and users with whom you communicate, IP-address, e-mail address are protected and completely confidential.
+In some preferences, it is legal, but even we can't refuse that you are doing cheating on internet. If you are using it for educational purposes and fair-use only, it can be considered as
+legal but if you are cheating by hiding your identity, it's totally illegal.
 
-➪ Bot Name : MysteryMail
-➪ Author : @riz4d
-➪ Language : Python''')
+**Benefits of this Temp Mail Bot**
+
+You can use it to do experiments on internet by hiding your identity. Even sometimes it can be seen that you need temporary address to login for a service,
+then also you need to get a temp mail. It can be seen so complicated to make a mail from temp mail generator website (even though not it is). Using bot, you just have
+to click some buttons and you have your temp mail in front of you.
+
+**Purpose of Making**
+
+This bot was made for educational purposes made by [Akhil Parmar](https://github.com/AKH1LS) to code within an API and how it works.
+Uses [1secmail.com](https://www.1secmail.com) API to generate temp mail for you..
+
+Maintained under [Akira Project](https://telegram.dog/Akira_News).
+
+''')
             elif message.text.lower()[14] == "[":
                 email = message.text.lower()[15:message.text.lower().find("]")]
                 bkeyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -84,7 +102,7 @@ How Mystery Mail Become Safer You?
                                              reply_markup=bkeyboard)
                             count = i + 1
                         bot.send_message(message.chat.id, "Here " + str(
-                            count) + " message we're found\nClick on the below button to read the message\n\n Further Queries @riz4d")
+                            count) + " message we're found\nClick on the below button to read the message\n\n If you have any query, report at @Akira_Support...")
                     else:
                         bot.send_message(message.chat.id, 'Nothing found', reply_markup=bkeyboard)
                 except BaseException:
@@ -108,4 +126,4 @@ How Mystery Mail Become Safer You?
     except BaseException:
         pass
         
-# Stay tuned for more : Instagram @riz.4d
+
