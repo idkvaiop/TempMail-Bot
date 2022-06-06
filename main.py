@@ -12,8 +12,8 @@ while True:
     try:
 
         keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
-        keyboard.add(InlineKeyboardButton(text='Generate email'))
-        keyboard.add(InlineKeyboardButton(text='Refresh inbox'))
+        keyboard.add(InlineKeyboardButton(text='Generate Email'))
+        keyboard.add(InlineKeyboardButton(text='Refresh Inbox'))
         keyboard.add(InlineKeyboardButton(text='About'))
 
 
