@@ -31,7 +31,7 @@ I am Akira Temp Email Generator which help users to generate a temporary email a
 Want to know everything about temp-mail system, then /about to know more...!!!
 
 This bot is developed by [Akhil](https://github.com/AKH1LS) for educational purposes to learn about how an API works.
-If you are facing issues in generating, report in our project [support group](https://telegram.dog/Akira_Support).
+If you are facing issues in generating your mail, report in our project [support group](https://telegram.dog/Akira_Support).
 
 Maintained under [Project Akira](https://telegram.dog/Akira_News).
 
